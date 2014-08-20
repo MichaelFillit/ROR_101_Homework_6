@@ -1,0 +1,12 @@
+<br/>
+<br/>
+Board ID: <%= @board_id %>
+ <br/>
+ -- Board: <%= @board.board %>
+<br/>
+<%= form_for @board, html: {method: :put} do |f| %>
+ <%=f.label :edit_board %>
+ <%=f.text_field :board %>
+
+ <%=f.submit :"Submit Edit" %>
+<% end %>

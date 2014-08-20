@@ -1,0 +1,16 @@
+<br/>
+<br/>
+Board:
+<br/>
+-- <%= @board.board %>
+<br/>
+Forum ID: <%= @forum.id %>
+ <br/>
+ -- Forum: <%= @forum.forum %>
+<br/>
+<%= form_for [@board, @forum], html: {method: :put} do |f| %>
+ <%=f.label :edit_forum %>
+ <%=f.text_field :forum %>
+
+ <%=f.submit :"Submit Edit" %>
+<% end %>

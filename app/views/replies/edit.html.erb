@@ -1,0 +1,15 @@
+ <br/>
+ Board: <%= @board.board %>
+ <br/>
+ Forum: <%= @forum.forum %> 
+ <br/>
+  -- Reply:
+ <br/>
+ -- -- <%= @reply.reply %>
+ <br/>
+<%= form_for [@board, @forum, @reply], html: {method: :put} do |f| %>
+ <%=f.label :edit_reply %>
+ <%=f.text_field :reply %>
+
+ <%=f.submit :"Submit Edit" %>
+<% end %>

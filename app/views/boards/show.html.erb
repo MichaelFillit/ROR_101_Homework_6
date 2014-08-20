@@ -1,0 +1,17 @@
+<br/>
+<br/>
+<a href="/boards"> Show All Boards</a>
+<br/>
+<br/>
+Board ID: <%= @board.id %> -- <a href="/boards/<%= @board.id %>/forums"> See This Board's Forums</a>
+<br/>
+ -- Board:
+ <br/>
+ -- -- <%= @board.board %>
+ <br/>
+ -- -- -- <a href="/boards/<%= @board.id %>/edit"> Edit Board </a>
+ <br/>
+ -- -- -- <%= link_to "Delete Board", board_path(@board.id), method: :delete %>
+  <br/>
+<br/>
+<%= link_to "Logout", session_path, method: :delete %>

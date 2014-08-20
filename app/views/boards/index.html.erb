@@ -1,0 +1,17 @@
+<br/>
+<br/>
+<a href="/boards/new"> Create A Board</a>
+<br/>
+<hr>
+<% @boards.each do |board| %>
+Board ID: <%= board.id %> -- <a href="/boards/<%= board.id %>"> Go To This Board</a> -- <a href="/boards/<%= board.id %>/forums"> See This Board's Forums</a>
+<br/>
+ -- Board:
+ <br/>
+ -- -- <%= board.board %>
+ <br/>
+ <hr>
+<% end %>
+<br/>
+<br/>
+<%= link_to "Logout", session_path, method: :delete %>

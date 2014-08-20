@@ -1,0 +1,13 @@
+Board:
+<br/>
+-- <%= @board.board %>
+<br/>
+<br/>
+<%= form_for [@board, @forum] do |f| %>
+
+ <%=f.label :forum %>
+ <%=f.text_field :forum %>
+
+ <%=f.submit :create %>
+ 
+<% end %>

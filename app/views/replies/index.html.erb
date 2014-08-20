@@ -1,0 +1,39 @@
+<br/>
+<br/>
+<a href="/boards"> Show All Boards</a>
+<br/>
+<br/>
+Board ID: <%= @board.id %>
+<br/>
+ -- Board:
+ <br/>
+ -- -- <%= @board.board %>s
+<br/>
+<br/>
+<a href="/boards/<%= @board.id %>/forums"> Show All Forums</a>
+<br/>
+<br/>
+Forum ID: <%= @forum.id %>
+ <br/>
+-- Forum:
+<br/>
+-- -- <%= @forum.forum %>
+ <br/>
+ <br/>
+Replies: <a href="/boards/<%= @board.id %>/forums/<%= @forum.id %>/replies/new"> Create A Reply</a>
+<br/>
+<hr>
+<% @forum.replies.each do |reply| %>
+ Reply ID: <%= reply.id %> -- Posted <%= time_ago_in_words(reply.created_at) %> ago
+ <br/>
+ -- Reply:
+ <br/>
+ -- -- <%= reply.reply %>
+ <br/>
+ -- -- -- <a href="/boards/<%= @board.id %>/forums/<%= @forum.id %>/replies/<%= reply.id %>"> Go To This Reply</a>
+ <br/>
+ <hr>
+<% end %>
+<br/>
+<br/>
+<%= link_to "Logout", session_path, method: :delete %>
